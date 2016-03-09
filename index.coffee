@@ -46,7 +46,7 @@ class Plugin extends EventEmitter
     @setOptions device.options
 
   setOptions: (options={}) =>
-    if @options != options
+    if !_.isEqual @options, options
       @options = options
       @createBucket()
 
